@@ -11,7 +11,7 @@ export default function Header() {
           <Container>
             <Navbar.Brand href="/">Dev. Bruno</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="/">Main</Nav.Link>
+              <Nav.Link href="/">Início</Nav.Link>
               <Nav.Link href="cadastro">Cadastro</Nav.Link>
             </Nav>
           </Container>

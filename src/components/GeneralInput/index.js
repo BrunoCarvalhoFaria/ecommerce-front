@@ -10,8 +10,10 @@ export default function GeneralInput({
   itemList,
   value,
   required,
+  name,
   handleChange = () => {},
   validationFunction = () => {},
+  disabled = false,
 }) {
   switch (inputType) {
     case "password":
@@ -24,8 +26,9 @@ export default function GeneralInput({
               placeholder={placeholder}
               value={value}
               onChange={handleChange}
-              isValid={validationFunction}
               required={required}
+              name={name}
+              disabled={disabled}
             />
           </Form.Group>
         </>
@@ -41,8 +44,9 @@ export default function GeneralInput({
               placeholder={placeholder}
               value={value}
               onChange={handleChange}
-              isValid={validationFunction}
               required={required}
+              name={name}
+              disabled={disabled}
             />
           </Form.Group>
         </>
@@ -61,8 +65,9 @@ export default function GeneralInput({
               placeholder={placeholder}
               value={value}
               onChange={handleChange}
-              isValid={validationFunction}
               required={required}
+              name={name}
+              disabled={disabled}
             />
           </Form.Group>
         </>
@@ -78,8 +83,9 @@ export default function GeneralInput({
               placeholder={placeholder}
               value={value}
               onChange={handleChange}
-              isValid={validationFunction}
               required={required}
+              name={name}
+              disabled={disabled}
             />
           </Form.Group>
         </>
@@ -90,7 +96,12 @@ export default function GeneralInput({
         <>
           <Form.Group className="mx-2" controlId={id}>
             <Form.Label className="mt-2">{label}</Form.Label>
-            <Form.Select aria-label="Default select example">
+            <Form.Select
+              onChange={handleChange}
+              value={value}
+              name={name}
+              disabled={disabled}
+            >
               <option open>Selecione...</option>
               {itemList.map((item) => {
                 return (
@@ -112,7 +123,7 @@ export default function GeneralInput({
               <Form.Check
                 inline
                 label={item}
-                name={id}
+                name={name}
                 type="radio"
                 id={item}
                 key={item}
